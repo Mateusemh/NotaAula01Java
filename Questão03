@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Produto {
+    private String nome;
+    private double preco;
+    private int estoque;
+
+    public Produto(String nome, double preco, int estoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.estoque = estoque;
+    }
+
+    public void adicionar(int quantidade) {
+        estoque += quantidade;
+        System.out.println("Estoque atualizado para " + estoque + " unidades.");
+    }
+
+    public void vender(int quantidade) {
+        if (quantidade <= estoque) {
+            estoque -= quantidade;
+            System.out.println("Venda feita, Estoque restante: " + estoque);
+        } else {
+            System.out.println("Não tem  estoque!");
+        }
+    }
+
+    public void mostrarEstoque() {
+        System.out.println("Produto: " + nome + " | Preço: R$ " + preco + " | Estoque: " + estoque);
+    }
+}
