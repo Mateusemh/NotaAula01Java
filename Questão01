@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Aluno {
+    private String nome;
+    private double nota1, nota2, nota3;
+
+    public void lerDados(Scanner teclado) {
+        System.out.print("Digite o nome do aluno: ");
+        nome = teclado.nextLine();
+        System.out.print("Primeira nota: ");
+        nota1 = teclado.nextDouble();
+        System.out.print("Segunda nota: ");
+        nota2 = teclado.nextDouble();
+        System.out.print("Terceira nota: ");
+        nota3 = teclado.nextDouble();
+    }
+
+    public double media() {
+        return (nota1 + nota2 + nota3) / 3;
+    }
+
+    public void resultado() {
+        double m = media();
+        System.out.printf("Média do aluno %s: %.2f\n", nome, m);
+        if (m >= 70) {
+            System.out.println("Aprovado!");
+        } else if (m < 40) {
+            System.out.println("Reprovado.");
+        } else {
+            System.out.println("Tá de recuperação.");
+        }
+    }
+}
